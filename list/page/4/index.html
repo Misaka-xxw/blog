@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -281,6 +281,210 @@ mjx-container[display="true"] + br {
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.misaka-xxw.github.io/2025/04/02/zi2zi-chain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Misaka-xxw">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Misaka-xxw的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Misaka-xxw的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2025/04/02/zi2zi-chain/" class="post-title-link" itemprop="url">zi2zi-chain:字体机器学习环境配置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-02 23:20:05" itemprop="dateCreated datePublished" datetime="2025-04-02T23:20:05+08:00">2025-04-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-03 00:03:49" itemprop="dateModified" datetime="2025-04-03T00:03:49+08:00">2025-04-03</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>107</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><h2 id="CUDA"><a href="#CUDA" class="headerlink" title="CUDA"></a>CUDA</h2><h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p>这里我装的是python3.9，因为装python3.7的话cuda似乎没有对应版本。新建一个miniconda环境。</p>
+<h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><p>查找和cuda相对应的版本号，例如Cuda 12.8<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --pre torch torchvision  --index-url https://download.pytorch.org/whl/nightly/cu128</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python font2img.py --src_font=src.otf --dst_font=trg.otf --charset=CN --sample_count=1000 --sample_dir=<span class="built_in">dir</span> --label=0 --filter --shuffle --mode=font2font</span><br><span class="line">python package.py --<span class="built_in">dir</span>=<span class="built_in">dir</span> --save_dir=experiment/data --split_ratio=0.8</span><br><span class="line">python train.py --experiment_dir=experiment --gpu_ids=cuda:0 --batch_size=32 --epoch=100 --sample_steps=200 --checkpoint_steps=500</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.misaka-xxw.github.io/2025/02/19/monotonous-stack-queue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Misaka-xxw">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Misaka-xxw的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Misaka-xxw的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2025/02/19/monotonous-stack-queue/" class="post-title-link" itemprop="url">单调栈与单调队列（滑动窗口）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-02-19 23:20:52" itemprop="dateCreated datePublished" datetime="2025-02-19T23:20:52+08:00">2025-02-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-03-10 22:21:33" itemprop="dateModified" datetime="2025-03-10T22:21:33+08:00">2025-03-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>749</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5788">原题</a><br>题意：对于数列,中每一个数，输出这个数后面第一个大于它的下标<br>思路：栈内从大往小放，当栈顶的数小于当前数时，更新栈顶数的answer并弹出。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">3e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">int</span> n, p = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> a[N], st[N], f[N];</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>), cout.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">        <span class="keyword">for</span> (; p &amp;&amp; a[st[p - <span class="number">1</span>]] &lt; a[i]; --p)</span><br><span class="line">        {</span><br><span class="line">            f[st[p - <span class="number">1</span>]] = i;</span><br><span class="line">        }</span><br><span class="line">        st[p++] = i;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        cout &lt;&lt; f[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="经典题：接雨水"><a href="#经典题：接雨水" class="headerlink" title="经典题：接雨水"></a>经典题：接雨水</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water?envType=study-plan-v2&envId=top-100-liked">原题</a><br><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/rainwatertrap.png" alt=""></p>
+<p>一个单调递减的单调栈，能找到每个柱子左边和右边的第一个比它高的柱子，从而计算出可以接住的雨水量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">trap</span>(<span class="params">self, height: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        st=[]</span><br><span class="line">        ans=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> r,rh <span class="keyword">in</span> <span class="built_in">enumerate</span>(height):</span><br><span class="line">            <span class="keyword">while</span> st <span class="keyword">and</span> height[st[-<span class="number">1</span>]]&lt;rh:</span><br><span class="line">                bottom=st.pop()</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> st:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                l=st[-<span class="number">1</span>]</span><br><span class="line">                w=r-l-<span class="number">1</span></span><br><span class="line">                h=<span class="built_in">min</span>(height[l],height[r])-height[bottom]</span><br><span class="line">                ans+=w*h</span><br><span class="line">            st.append(r)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<h1 id="滑动窗口-单调队列"><a href="#滑动窗口-单调队列" class="headerlink" title="滑动窗口/单调队列"></a>滑动窗口/单调队列</h1><h2 id="模板-1"><a href="#模板-1" class="headerlink" title="模板"></a>模板</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1886">原题</a><br>题意：滑动窗口的最小值和最大值</p>
+<p>思路：<br>有更好的新员工，立刻淘汰老员工；<br>老员工过期了，多好也要淘汰；<br>新员工永远来到队伍的最底端，队列从头到尾，是从又优秀又老的Top员工，到又普通又新的Back员工。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> n, k, a[N];</span><br><span class="line">deque&lt;<span class="type">int</span>&gt; maxq, minq;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>), cout.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="comment">// 区间最小</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span> (!minq.<span class="built_in">empty</span>() &amp;&amp; minq.<span class="built_in">front</span>() &lt;= i - k)</span><br><span class="line">            minq.<span class="built_in">pop_front</span>();</span><br><span class="line">        <span class="keyword">while</span> (!minq.<span class="built_in">empty</span>() &amp;&amp; a[minq.<span class="built_in">back</span>()] &gt;= a[i])</span><br><span class="line">            minq.<span class="built_in">pop_back</span>();</span><br><span class="line">        minq.<span class="built_in">push_back</span>(i);</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; a[minq.<span class="built_in">front</span>()];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = k; i &lt; n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span> (!minq.<span class="built_in">empty</span>() &amp;&amp; minq.<span class="built_in">front</span>() &lt;= i - k)</span><br><span class="line">            minq.<span class="built_in">pop_front</span>();</span><br><span class="line">        <span class="keyword">while</span> (!minq.<span class="built_in">empty</span>() &amp;&amp; a[minq.<span class="built_in">back</span>()] &gt;= a[i])</span><br><span class="line">            minq.<span class="built_in">pop_back</span>();</span><br><span class="line">        minq.<span class="built_in">push_back</span>(i);</span><br><span class="line">        cout &lt;&lt; <span class="string">' '</span> &lt;&lt; a[minq.<span class="built_in">front</span>()];</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 区间最大</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span> (!maxq.<span class="built_in">empty</span>() &amp;&amp; maxq.<span class="built_in">front</span>() &lt;= i - k)</span><br><span class="line">            maxq.<span class="built_in">pop_front</span>();</span><br><span class="line">        <span class="keyword">while</span> (!maxq.<span class="built_in">empty</span>() &amp;&amp; a[maxq.<span class="built_in">back</span>()] &lt;= a[i])</span><br><span class="line">            maxq.<span class="built_in">pop_back</span>();</span><br><span class="line">        maxq.<span class="built_in">push_back</span>(i);</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; a[maxq.<span class="built_in">front</span>()];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = k; i &lt; n; i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span> (!maxq.<span class="built_in">empty</span>() &amp;&amp; maxq.<span class="built_in">front</span>() &lt;= i - k)</span><br><span class="line">            maxq.<span class="built_in">pop_front</span>();</span><br><span class="line">        <span class="keyword">while</span> (!maxq.<span class="built_in">empty</span>() &amp;&amp; a[maxq.<span class="built_in">back</span>()] &lt;= a[i])</span><br><span class="line">            maxq.<span class="built_in">pop_back</span>();</span><br><span class="line">        maxq.<span class="built_in">push_back</span>(i);</span><br><span class="line">        cout &lt;&lt; <span class="string">' '</span> &lt;&lt; a[maxq.<span class="built_in">front</span>()];</span><br><span class="line">    }</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="经典题：无重复字符的最长子串"><a href="#经典题：无重复字符的最长子串" class="headerlink" title="经典题：无重复字符的最长子串"></a>经典题：无重复字符的最长子串</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters?envType=study-plan-v2&envId=top-100-liked">原题</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> {<span class="type">string</span>} <span class="variable">s</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> {<span class="type">number</span>}</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> lengthOfLongestSubstring = <span class="keyword">function</span>(<span class="params">s</span>) {</span><br><span class="line">    <span class="keyword">const</span> set=<span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">    <span class="keyword">let</span> j=<span class="number">0</span>,ans=<span class="number">0</span>,n=s.<span class="property">length</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){</span><br><span class="line">        <span class="keyword">while</span>(j&lt;n&amp;&amp;!set.<span class="title function_">has</span>(s[j])){</span><br><span class="line">            set.<span class="title function_">add</span>(s[j]);</span><br><span class="line">            j++;</span><br><span class="line">        }</span><br><span class="line">        ans=<span class="title class_">Math</span>.<span class="title function_">max</span>(ans,j-i);</span><br><span class="line">        set.<span class="title function_">delete</span>(s[i]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-all-anagrams-in-a-string?envType=study-plan-v2&amp;envId=top-100-liked">https://leetcode.cn/problems/find-all-anagrams-in-a-string?envType=study-plan-v2&amp;envId=top-100-liked</a></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> {</span><br><span class="line">    <span class="function"><span class="keyword">public</span> IList&lt;<span class="built_in">int</span>&gt; <span class="title">FindAnagrams</span>(<span class="params"><span class="built_in">string</span> s, <span class="built_in">string</span> p</span>)</span> {</span><br><span class="line">        <span class="keyword">var</span> ans=<span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">        <span class="built_in">int</span> sl=s.Length,pl=p.Length;</span><br><span class="line">        <span class="keyword">if</span>(sl&lt;pl){</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        }</span><br><span class="line">        <span class="built_in">int</span>[] cnt=<span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="built_in">int</span> dif=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;pl;i++){</span><br><span class="line">            ++cnt[s[i]-<span class="string">'a'</span>];</span><br><span class="line">            --cnt[p[i]-<span class="string">'a'</span>];</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++){</span><br><span class="line">            <span class="keyword">if</span>(cnt[i]!=<span class="number">0</span>) ++dif;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span>(dif==<span class="number">0</span>) ans.Add(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;sl-pl;i++){</span><br><span class="line">            <span class="built_in">int</span> idx=s[i]-<span class="string">'a'</span>;</span><br><span class="line">            <span class="keyword">if</span>(cnt[idx]==<span class="number">1</span>) --dif;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(cnt[idx]==<span class="number">0</span>) ++dif;</span><br><span class="line">            --cnt[idx];</span><br><span class="line"></span><br><span class="line">            idx=s[i+pl]-<span class="string">'a'</span>;</span><br><span class="line">            <span class="keyword">if</span>(cnt[idx]==<span class="number">-1</span>) --dif;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(cnt[idx]==<span class="number">0</span>) ++dif;</span><br><span class="line">            ++cnt[idx];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(dif==<span class="number">0</span>) ans.Add(i+<span class="number">1</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1913,513 +2117,6 @@ k\sigma^2 &= \sum_{i=1}^{k}(v_i - \bar{v})^2 \\
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.misaka-xxw.github.io/2025/01/31/ffmpeg/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Misaka-xxw">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Misaka-xxw的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Misaka-xxw的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2025/01/31/ffmpeg/" class="post-title-link" itemprop="url">ffmpeg处理视频、音频等多媒体文件笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-01-31 20:35:44" itemprop="dateCreated datePublished" datetime="2025-01-31T20:35:44+08:00">2025-01-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-05-10 21:28:33" itemprop="dateModified" datetime="2025-05-10T21:28:33+08:00">2025-05-10</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>233</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一边使用，一边记录。</p>
-<h1 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h1><h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>官网下载位置：<a target="_blank" rel="noopener" href="https://www.gyan.dev/ffmpeg/builds/">https://www.gyan.dev/ffmpeg/builds/</a><br>按Ctrl-F，找到ffmpeg-release-essentials.zip，下载解压<br>设置环境变量为“【ffmpeg-release-essentials所在的路径】/bin”</p>
-<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p>ubuntu<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install FFmpeg</span><br></pre></td></tr></table></figure><br>其它：<a target="_blank" rel="noopener" href="https://linux.cn/article-14716-1.html">https://linux.cn/article-14716-1.html</a></p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="将某一文件夹的flac文件全部转化成wav文件"><a href="#将某一文件夹的flac文件全部转化成wav文件" class="headerlink" title="将某一文件夹的flac文件全部转化成wav文件"></a>将某一文件夹的flac文件全部转化成wav文件</h2><p>假设参数：16位PCM，采样率为44100Hz，双声道<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> %%f <span class="keyword">in</span> (*.flac) <span class="keyword">do</span> (ffmpeg -i <span class="string">&quot;%%f&quot;</span> -acodec pcm_s16le -ar 44100 -ac 2 <span class="string">&quot;%%~nf.wav&quot;</span>)</span><br></pre></td></tr></table></figure><br>检查无误，批量删除原flac文件<br>如果要进行确认，就不加<code>/q</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del /q *.flac</span><br></pre></td></tr></table></figure></p>
-<h2 id="提高亮度或者对比度"><a href="#提高亮度或者对比度" class="headerlink" title="提高亮度或者对比度"></a>提高亮度或者对比度</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i in.png -vf <span class="string">&quot;eq=brightness=0.1&quot;</span> out.png </span><br><span class="line">ffmpeg -i in.png -vf <span class="string">&quot;eq=brightness=0.1:contrast=1.1&quot;</span> out.png </span><br></pre></td></tr></table></figure>
-<p>其中亮度的基准为0，对比度的基准为1.0</p>
-<h2 id="将MP4视频去掉音频"><a href="#将MP4视频去掉音频" class="headerlink" title="将MP4视频去掉音频"></a>将MP4视频去掉音频</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -c:v copy -an output.mp4</span><br></pre></td></tr></table></figure>
-<h2 id="将MP4视频每秒6帧转为800x480的bmp图片"><a href="#将MP4视频每秒6帧转为800x480的bmp图片" class="headerlink" title="将MP4视频每秒6帧转为800x480的bmp图片"></a>将MP4视频每秒6帧转为800x480的bmp图片</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -f image2 -vcodec bmp -s 800x480 -r 6 %d.bmp</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.misaka-xxw.github.io/2025/01/09/c_exam_note1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Misaka-xxw">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Misaka-xxw的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Misaka-xxw的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2025/01/09/c_exam_note1/" class="post-title-link" itemprop="url">C语言期末笔记（一）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-01-09 21:52:07" itemprop="dateCreated datePublished" datetime="2025-01-09T21:52:07+08:00">2025-01-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-21 12:16:13" itemprop="dateModified" datetime="2025-01-21T12:16:13+08:00">2025-01-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C&&C++</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>C语言复习过几遍，所以这里记录一些有点难记的东西。</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h3><ol>
-<li><p>整数类型：<br> short 2字节<br> int 4字节<br> long 8字节</p>
-</li>
-<li><p>浮点类型：<br> double 8字节<br> float 4字节<br> 定义float类型时需写成：float num = 0.5f;（小数默认是double）</p>
-</li>
-<li><p>字符类型：<br> char 1字节<br> 可以表示ASCLL码中所有的字符，不能表示中文等</p>
-</li>
-</ol>
-<h3 id="占位（p73）"><a href="#占位（p73）" class="headerlink" title="占位（p73）"></a>占位（p73）</h3><p>%占位：<br>printf格式化输出函数，%占位时有以下参数：<code>%[占位长度][.精确位数（四舍五入）]</code>占位格式</p>
-<ul>
-<li>%d  为整数占位</li>
-<li>%hd 为short整数占位</li>
-<li>%ld 为long整数占位</li>
-<li>%u  为unsigned整数占位<br>  %lu，%hu..<br>  对unsigned赋值负数，补码的首位依然被认为是1，但输出时这个1是会带入二进制计算的</li>
-<li>%e  指数<br>  例：<code>printf(&quot;%e&quot;,123.456);</code> 输出：<code>1.234560e+002</code><br>  例：<code>printf(&quot;%13.2e&quot;,123.456);</code> 输出：<code>(四个空格）1.23e+002</code></li>
-<li>%E %e的大写</li>
-<li>%i  等同于%d</li>
-<li>%o 八进制输出</li>
-<li>%x 十六进制输出，小写</li>
-<li>%X 十六进制输出，大写</li>
-<li>%g 自动选择%f或者%e输出，小写</li>
-<li>%G 自动选择%f或者%E输出，大写</li>
-<li>%s 字符串</li>
-</ul>
-<h3 id="科学计数法"><a href="#科学计数法" class="headerlink" title="科学计数法"></a>科学计数法</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf\n&quot;</span>, <span class="number">123000000.0</span>);      <span class="comment">// 123000000.000000</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2e\n&quot;</span>, <span class="number">123000000.0</span>);     <span class="comment">// 1.23e+008</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2e\n&quot;</span>, <span class="number">-123000000.0</span>);    <span class="comment">//-1.23e+008</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf\n&quot;</span>, <span class="number">0.0000000123</span>);     <span class="comment">// 0.000000</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%e\n&quot;</span>, <span class="number">0.0000000123</span>);      <span class="comment">// 1.230000e-008</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%g\n&quot;</span>, <span class="number">0.0000000123</span>);      <span class="comment">// 1.23e-008</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2e\n&quot;</span>, <span class="number">0.0000000123</span>);    <span class="comment">// 1.23e-008</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2e\n&quot;</span>, <span class="number">-0.0000000123</span>);   <span class="comment">//-1.23e-008</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lf, %e\n&quot;</span>, <span class="number">.1e-2</span>, <span class="number">.1e-2</span>); <span class="comment">// 0.001000, 1.000000e-003</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="舍入舍出"><a href="#舍入舍出" class="headerlink" title="舍入舍出"></a>舍入舍出</h3><p>浮点型格式化输出，四舍五入：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> a;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%f\t%.2f\n&quot;</span>, a, a);</span><br></pre></td></tr></table></figure>
-<p>浮点型强制转化，直接丢小数点后的</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%f\t%d\n&quot;</span>, a, (<span class="type">int</span>)a);</span><br></pre></td></tr></table></figure>
-<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>转义字符</th>
-<th>字符值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>\&#39;</code></td>
-<td>‘</td>
-</tr>
-<tr>
-<td><code>\&quot;</code></td>
-<td>“</td>
-</tr>
-<tr>
-<td><code>\?</code></td>
-<td>?</td>
-</tr>
-<tr>
-<td><code>\\</code></td>
-<td><code>\</code></td>
-</tr>
-<tr>
-<td><code>\a</code></td>
-<td>警告</td>
-</tr>
-<tr>
-<td><code>\b</code></td>
-<td>退格</td>
-</tr>
-<tr>
-<td><code>\f</code></td>
-<td>换页</td>
-</tr>
-<tr>
-<td><code>\n</code></td>
-<td>换行</td>
-</tr>
-<tr>
-<td><code>\r</code></td>
-<td>回车</td>
-</tr>
-<tr>
-<td><code>\t</code></td>
-<td>水平制表符</td>
-</tr>
-<tr>
-<td><code>\v</code></td>
-<td>垂直制表符</td>
-</tr>
-<tr>
-<td><code>\o、\oo、\ooo</code>，o代表一个八进制数字</td>
-<td>与该八进制码对应的ASCLL字符</td>
-</tr>
-<tr>
-<td><code>\xh[h..]</code>，h代表一个十六进制数字</td>
-<td>与该十六进制码对应的ASCLL字符</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="ASCII码"><a href="#ASCII码" class="headerlink" title="ASCII码"></a>ASCII码</h2><p>常见ASCII码：<br>‘ ‘: 32<br>‘0’: 48<br>‘A’: 65<br>‘a’: 97</p>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><table>
-    <tr>
-        <th>优先级</th>
-        <th>运算符</th>
-        <th>含义</th>
-        <th>运算对象个数</th>
-        <th>结合方向</th>
-    </tr>
-    <tr>
-        <td rowspan=4>1</td>
-        <td>( )</td>
-        <td></td>
-        <td rowspan=4></td>
-        <td rowspan=4>→👉</td>
-    <tr>
-        <td>[ ]</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td> -> </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td> . </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td rowspan=9>2</td>
-        <td>!</td>
-        <td></td>
-        <td rowspan=9>1</td>
-        <td rowspan=9><mark>←👈</mark></td>
-    <tr>
-        <td>~</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>++</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>--</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>-</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>(类型)</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>*</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>&</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>sizeof</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td rowspan=3>3</td>
-        <td>*</td>
-        <td></td>
-        <td rowspan=3>2</td>
-        <td rowspan=3>→👉</td>
-    </tr>
-    <tr>
-        <td>/</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>%</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td rowspan=2>4</td>
-        <td>+</td>
-        <td></td>
-        <td rowspan=2>2</td>
-        <td rowspan=2>→👉</td>
-    </tr>
-    <tr>
-        <td>-</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td rowspan=2>5</td>
-        <td><<</td>
-        <td></td>
-        <td rowspan=2>2</td>
-        <td rowspan=2>→👉</td>
-    </tr>
-    <tr>
-        <td>>></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <td>< <= > >=</td>
-        <td></td>
-        <td>2</td>
-        <td>→👉</td>
-    </tr>
-    <tr>
-        <td rowspan=2>7</td>
-        <td>==</td>
-        <td></td>
-        <td rowspan=2>2</td>
-        <td rowspan=2>→👉</td>
-    </tr>
-    <tr>
-        <td>!=</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>8</td>
-        <td>&</td>
-        <td></td>
-        <td>2</td>
-        <td>→👉</td>
-    </tr>
-    <tr>
-        <td>9</td>
-        <td>^</td>
-        <td></td>
-        <td>2</td>
-        <td>→👉</td>
-    </tr>
-    <tr>
-        <td>10</td>
-        <td>|</td>
-        <td></td>
-        <td>2</td>
-        <td>→👉</td>
-    </tr>
-    <tr>
-        <td>11</td>
-        <td>&&</td>
-        <td></td>
-        <td>2</td>
-        <td>→👉</td>
-    </tr>
-    <tr>
-        <td>12</td>
-        <td>||</td>
-        <td></td>
-        <td>2</td>
-        <td>→👉</td>
-    </tr>
-    <tr>
-        <td>13</td>
-        <td>? : </td>
-        <td></td>
-        <td>3</td>
-        <td><mark>←👈</mark></td>
-    </tr>
-    <tr>
-        <td>14</td>
-        <td>= += -= *= /= %= >>= <<= &= ^= |=</td>
-        <td></td>
-        <td>2</td>
-        <td>→👉</td>
-    </tr>
-     <tr>
-        <td>15</td>
-        <td>,</td>
-        <td></td>
-        <td></td>
-        <td>→👉</td>
-    </tr>
-</table>
-
-<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="1-文件类型指针"><a href="#1-文件类型指针" class="headerlink" title="1. 文件类型指针"></a>1. 文件类型指针</h3><p>(p333)</p>
-<p>用纸质笔记记录了。准备在C语言期末笔记（二）里面写</p>
-<h3 id="文件操作例子"><a href="#文件操作例子" class="headerlink" title="文件操作例子"></a>文件操作例子</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE *fp;</span><br><span class="line">    <span class="type">int</span> e;</span><br><span class="line">    <span class="type">long</span> len;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">    <span class="type">int</span> status;</span><br><span class="line">    fp = fopen(<span class="string">&quot;pi.tmp&quot;</span>, <span class="string">&quot;w&quot;</span>);</span><br><span class="line">    <span class="built_in">fputs</span>(<span class="string">&quot;3.1415926&quot;</span>, fp); <span class="comment">// len=8,SEEK_SET=&gt;0,SEEK_END=&gt;9</span></span><br><span class="line">    fclose(fp);</span><br><span class="line">    fp = fopen(<span class="string">&quot;pi.tmp&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line">    <span class="built_in">fscanf</span>(fp, <span class="string">&quot;%d%c&quot;</span>, &amp;e, &amp;c);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;e=%d,c=%c\n&quot;</span>, e, c); <span class="comment">// e=3,c=.</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//=============== fseek &amp; ftell test start ===============</span></span><br><span class="line">    len = ftell(fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;before fseek:%ld\n&quot;</span>, len); <span class="comment">// 2，指向&#x27;1&#x27;之前</span></span><br><span class="line">    status = fseek(fp, <span class="number">-1L</span>, SEEK_END);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fseek -1 end:%ld (%d)\n&quot;</span>, ftell(fp), status); <span class="comment">// 8</span></span><br><span class="line">    rewind(fp);                                           <span class="comment">// void函数，没有返回值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;rewind:%ld\n&quot;</span>, ftell(fp));                    <span class="comment">// 0</span></span><br><span class="line">    status = fseek(fp, <span class="number">-1L</span>, SEEK_SET);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fseek -1 set:%ld (%d)\n&quot;</span>, ftell(fp), status); <span class="comment">// 0，fseek失败</span></span><br><span class="line">    status = fseek(fp, <span class="number">111L</span>, SEEK_SET);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fseek 111 set:%ld (%d)\n&quot;</span>, ftell(fp), status); <span class="comment">// 111，虽然比文件长了很多，但是fseek成功</span></span><br><span class="line">    status = fseek(fp, <span class="number">-121L</span>, SEEK_CUR);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fseek -121 cur:%ld (%d)\n&quot;</span>, ftell(fp), status); <span class="comment">// 111，fseek失败</span></span><br><span class="line">    status = fseek(fp, <span class="number">-111L</span>, SEEK_CUR);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fseek -111 cur:%ld (%d)\n&quot;</span>, ftell(fp), status); <span class="comment">// 0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="魔法阵"><a href="#魔法阵" class="headerlink" title="魔法阵"></a>魔法阵</h3><p>思路</p>
-<table>
-    <tr>
-        <td colspan=2>第一排：if is middle: init 1;<br/>else: {row = a - 1;//<u> ↓</u><br/>col++;//→}</td>
-        <td>右上角：row++;//↓</td>
-    </tr>
-    <tr>
-        <td>row--;//↓<br/>
-    col++;//→</td>
-        <td>row--;//↓<br/>
-    col++;//→</td>
-        <td rowspan=2>最右列：<br/>row--;//↑<br/>
-                col = 0;//|←</td>
-    </tr>
-    <tr>
-        <td>row--;//↓<br/>
-    col++;//→</td>
-        <td>row--;//↓<br/>
-    col++;//→</td>
-    </tr>
-</table>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 已占数字:</span><br><span class="line">    row = (row + <span class="number">2</span>) % a;<span class="comment">//→→2，超出则|←</span></span><br><span class="line">    col = (col + a - <span class="number">1</span>) % a;<span class="comment">//←1，超出则→|</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">3</span>, num, row, col, a, a2;</span><br><span class="line">    <span class="type">int</span> arr[<span class="number">101</span>][<span class="number">101</span>];</span><br><span class="line">    <span class="keyword">for</span> (a = <span class="number">1</span>; a &lt;= n; a+=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(arr, <span class="number">0</span>, <span class="keyword">sizeof</span> arr);</span><br><span class="line">        row = <span class="number">0</span>;</span><br><span class="line">        col = a / <span class="number">2</span>;</span><br><span class="line">        a2 = a * a;</span><br><span class="line">        <span class="keyword">for</span> (num = <span class="number">1</span>; num &lt;= a2; num ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// printf(&quot;row: %d col: %d num: %d\n&quot;,row,col,num);</span></span><br><span class="line">            arr[row][col] = num;</span><br><span class="line">            <span class="keyword">if</span> (row == <span class="number">0</span> &amp;&amp; col == a - <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                row++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (row == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                row = a - <span class="number">1</span>;</span><br><span class="line">                col++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (col == n - <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                row--;</span><br><span class="line">                col = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                row--;</span><br><span class="line">                col++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (arr[row][col] != <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                row = (row + <span class="number">2</span>) % a;</span><br><span class="line">                col = (col + a - <span class="number">1</span>) % a;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (row = <span class="number">0</span>; row &lt; a; row++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (col = <span class="number">0</span>; col &lt; a; col++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%2d &quot;</span>, arr[row][col]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="易错点"><a href="#易错点" class="headerlink" title="易错点"></a>易错点</h2><ul>
-<li><p>默认输出六位</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%f&quot;</span>,f);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>反常识define</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> true 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> false 1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>switch</code>不<code>break</code>就继续走</p>
-</li>
-<li><code>fseek(fp, 0L, 2);</code>中，最后那个才是指示从哪儿开始的，即<code>SEEK_END=2</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/blog/list/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/list/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/list/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/blog/list/page/5/">5</a><a class="page-number" href="/blog/list/page/6/">6</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/blog/list/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -2444,14 +2141,14 @@ k\sigma^2 &= \sum_{i=1}^{k}(v_i - \bar{v})^2 \\
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">86k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:05</span>
+    <span title="站点阅读时长">5:13</span>
   </span>
 </div>
 <div class="busuanzi-count">

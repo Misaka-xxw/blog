@@ -2925,7 +2925,7 @@ h1 {
 </ul>
 ]]></content>
       <categories>
-        <category>C&amp;&amp;C++</category>
+        <category>编程语言</category>
       </categories>
       <tags>
         <tag>C</tag>
@@ -7700,6 +7700,7 @@ DA = \frac{1}{T} \sum_{i=1}^{M} T(P_i, \hat{P}_i) \cdot V(P_i, \hat{P}_i) \cdot 
 <h1 id="挖坑不填的事情"><a href="#挖坑不填的事情" class="headerlink" title="挖坑不填的事情"></a>挖坑不填的事情</h1><p><a href="https://github.com/Misaka-xxw/Toaru-Majutsu-no-Index-Title">某系列字体生成</a>，应该使用AI完成当年的坑，进行release。同时更新专栏里的百度网盘链接 <del>，也可以水投稿</del></p>
 <p>笔试面试的记录可以长期写。</p>
 <p>还有当年做失败的游戏，以前好想重置哦，美术音乐素材真的很好！结果，似乎永远停留在，“过去”这个遥远的梦中了……</p>
+<h1 id="想要新挖的坑"><a href="#想要新挖的坑" class="headerlink" title="想要新挖的坑"></a>想要新挖的坑</h1><p>想再新开一个博客，放满ACGN和“发疯文学”（不算文学吧）。也许会画画，把画放上去？好想学B站头图那个视差动画。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -7817,6 +7818,425 @@ DA = \frac{1}{T} \sum_{i=1}^{M} T(P_i, \hat{P}_i) \cdot V(P_i, \hat{P}_i) \cdot 
       <tags>
         <tag>树</tag>
         <tag>数据结构与算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hugging Face食用方式</title>
+    <url>/blog/2026/07/18/hugging-face/</url>
+    <content><![CDATA[<p>Hugging Face太经常用了。随时记录一下吧。</p>
+<h1 id="Hugging-Face-cli食用指南"><a href="#Hugging-Face-cli食用指南" class="headerlink" title="Hugging Face cli食用指南"></a>Hugging Face cli食用指南</h1><p>转载自<a href="https://hugging-face.cn/docs/huggingface_hub/guides/cli">说明文档中文镜像</a>，现在只有拿来主义，所以只管pull不管push。</p>
+<h2 id="命令速查"><a href="#命令速查" class="headerlink" title="命令速查"></a>命令速查</h2><p>先写命令速查再写下载安装，是因为下载安装的频次少。</p>
+<h3 id="登录相关"><a href="#登录相关" class="headerlink" title="登录相关"></a>登录相关</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 登录</span></span><br><span class="line">hf auth login</span><br><span class="line"><span class="comment"># 登录后重新登录</span></span><br><span class="line">hf auth login --force</span><br><span class="line"><span class="comment"># 查看登录信息</span></span><br><span class="line">hf auth <span class="built_in">whoami</span></span><br><span class="line"><span class="comment"># 完全登出</span></span><br><span class="line">hf auth <span class="built_in">logout</span></span><br></pre></td></tr></table></figure>
+<h3 id="下载相关"><a href="#下载相关" class="headerlink" title="下载相关"></a>下载相关</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从某个库下载一个或多个文件</span></span><br><span class="line">hf download repo_id名 文件名 文件名 文件名</span><br><span class="line"><span class="comment"># 过滤名称示范</span></span><br><span class="line">hf download stabilityai/stable-diffusion-xl-base-1.0 --include <span class="string">&quot;*.safetensors&quot;</span> --exclude <span class="string">&quot;*.fp16.*&quot;</span>*</span><br><span class="line"><span class="comment"># 下载到本地文件夹</span></span><br><span class="line">hf download 库名也许包括文件名 --local-dir 本地文件夹路径</span><br></pre></td></tr></table></figure>
+<p>试运行，不真下载：<code>--dry-run</code><br>指定缓存目录：<code>--cache-dir 缓存目录路径</code><br>闭嘴下载：<code>--quiet</code></p>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>一般我在服务器上激活conda环境后装。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -U <span class="string">&quot;huggingface_hub&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="AI-Agent-专用-Hugging-Face-CLI"><a href="#AI-Agent-专用-Hugging-Face-CLI" class="headerlink" title="AI Agent 专用 Hugging Face CLI"></a>AI Agent 专用 Hugging Face CLI</h2><p>安装skill</p>
+<p>只对某个项目安装：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># for Codex, Cursor, OpenCode, Pi and other agents that load skills from `.agents/skills`</span></span><br><span class="line">hf skills add</span><br><span class="line"><span class="comment"># includes the above + Claude Code</span></span><br><span class="line">hf skills add --claude</span><br></pre></td></tr></table></figure></p>
+<p>全局安装要在后面加上<code>--global</code></p>
+<h1 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h1><p>Hugging Face网页搜索感觉怪怪的？一般都用bing搜索再点进去了。</p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>Hugging Face</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C# base</title>
+    <url>/blog/2026/07/18/C-sharp-base/</url>
+    <content><![CDATA[<p>C艹艹，忘光光。<br>好像学Unity的时候，直接当作语法略有不同的C艹来写了。<del>应该没问题吧。</del><br>先写点基础。</p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>见过的C#用在</p>
+<ul>
+<li>Unity游戏编程</li>
+<li>服务器后端</li>
+</ul>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><code>C#</code>是语言，<code>.NET</code>是运行时平台。首先我想先遍历一下基本的数据类型，后面再好好了解背后的编译原理吧。</p>
+<p>$<br>\begin{cases}<br>\text{值类型 (Value Types)} &amp;<br>\begin{cases}<br>\text{预定义数值类型} &amp;<br>\begin{cases}<br>\text{整型: sbyte, byte, short, ushort, int, uint, long, ulong} \\<br>\text{浮点型: float, double, decimal}<br>\end{cases} \\<br>\text{预定义非数值类型: bool, char} \\<br>\text{用户自定义: struct, enum}<br>\end{cases} \\\\<br>\text{引用类型 (Reference Types)} &amp;<br>\begin{cases}<br>\text{预定义类型: object, string, dynamic} \\<br>\text{用户自定义: class, interface, delegate, Array}<br>\end{cases}<br>\end{cases}<br>$</p>
+<h2 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h2><h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><p><code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code>分别为1、2、4、8个字节长度。<br>其中表示有无符号的前缀，只有<code>byte</code>有个<code>sbyte</code>（即signed有符号的意思），其它的<code>u</code>起头，代表无符号</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>C# 类型/关键字</th>
+<th>范围</th>
+<th>尺寸</th>
+<th>.NET类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sbyte</code></td>
+<td>-128 到 127</td>
+<td>8 位带符号整数</td>
+<td><code>System.SByte</code></td>
+</tr>
+<tr>
+<td><code>byte</code></td>
+<td>0 到 255</td>
+<td>无符号 8 位整数</td>
+<td><code>System.Byte</code></td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>-32,768 到 32,767</td>
+<td>带符号 16 位整数</td>
+<td><code>System.Int16</code></td>
+</tr>
+<tr>
+<td><code>ushort</code></td>
+<td>0 到 65,535</td>
+<td>无符号 16 位整数</td>
+<td><code>System.UInt16</code></td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>-2,147,483,648 到 2,147,483,647</td>
+<td>带符号的 32 位整数</td>
+<td><code>System.Int32</code></td>
+</tr>
+<tr>
+<td><code>uint</code></td>
+<td>0 到 4,294,967,295</td>
+<td>无符号 32 位整数</td>
+<td><code>System.UInt32</code></td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>-9,223,372,036,854,775,808 到 9,223,372,036,854,775,807</td>
+<td>64 位带符号整数</td>
+<td><code>System.Int64</code></td>
+</tr>
+<tr>
+<td><code>ulong</code></td>
+<td>0 到 18,446,744,073,709,551,615</td>
+<td>无符号 64 位整数</td>
+<td><code>System.UInt64</code></td>
+</tr>
+<tr>
+<td><code>nint</code></td>
+<td>取决于平台（在运行时计算）</td>
+<td>带符号 32 位或 64 位整数</td>
+<td><code>System.IntPtr</code></td>
+</tr>
+<tr>
+<td><code>nuint</code></td>
+<td>取决于平台（在运行时计算）</td>
+<td>无符号 32 位或 64 位整数</td>
+<td><code>System.UIntPtr</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>比起C++，C#的整型大小固定、溢出可控、命名统一。</p>
+<p>每个整型的默认值为零。 <code>0</code></p>
+<p>每个整型类型都有<code>MinValue</code>和<code>MaxValue</code>属性，用于提供该类型的最小值和最大值。</p>
+<h4 id="整数字面量"><a href="#整数字面量" class="headerlink" title="整数字面量"></a>整数字面量</h4><p>十进制、十六进制、二进制表示法：<br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> decimalLiteral = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">var</span> hexLiteral = <span class="number">0x2A</span>;</span><br><span class="line"><span class="keyword">var</span> binaryLiteral = <span class="number">0b</span>_0010_1010;</span><br></pre></td></tr></table></figure></p>
+<h3 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>C# 类型/关键字</th>
+<th>近似范围</th>
+<th>精准率</th>
+<th>尺寸</th>
+<th>.NET 类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float</code></td>
+<td>±1.5 x 10~45 到 ±3.4 x 1038</td>
+<td>~6-9 位数字</td>
+<td>4 个字节</td>
+<td><code>System.Single</code></td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>±5.0 × 10~324 到 ±1.7 × 10308</td>
+<td>~15-17 位数字</td>
+<td>8 个字节</td>
+<td><code>System.Double</code></td>
+</tr>
+<tr>
+<td><code>decimal</code></td>
+<td>±1.0 x 10-28 到 ±7.9228 x 1028</td>
+<td>28-29 位数字</td>
+<td>16 字节</td>
+<td><code>System.Decimal</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>范围</th>
+<th>尺寸</th>
+<th>.NET 类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td><code>true</code>和<code>false</code></td>
+<td>1 字节</td>
+<td><code>System.Boolean</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>范围</th>
+<th>尺寸</th>
+<th>.NET 类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>char</code></td>
+<td>U+0000 到 U+FFFF</td>
+<td>16 位</td>
+<td><code>System.Char</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>字符的定义方法可以是字符、unicode转义、十六进制转义</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> chars = <span class="keyword">new</span>[]</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&#x27;j&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;\u006A&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;\x006A&#x27;</span>,</span><br><span class="line">    (<span class="built_in">char</span>)<span class="number">106</span>,</span><br><span class="line">&#125;;</span><br><span class="line">Console.WriteLine(<span class="built_in">string</span>.Join(<span class="string">&quot; &quot;</span>, chars));  <span class="comment">// output: j j j j</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[!IMPORTANT]</p>
+<ul>
+<li>在 <code>Unicode</code> 转义序列中，必须指定4个十六进制数字。 也就是说， <code>\u006A</code> 是有效的转义序列，而 <code>\u06A</code> 和 <code>\u6A</code> 无效。</li>
+<li>在十六进制转义序列中，可以省略前导零。</li>
+</ul>
+</blockquote>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>枚举都长差不多。默认<code>int</code><br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">enum</span> Season</span><br><span class="line">&#123;</span><br><span class="line">    Spring,</span><br><span class="line">    Summer,</span><br><span class="line">    Autumn,</span><br><span class="line">    Winter</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>不按默认来：<br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">enum</span> ErrorCode : <span class="built_in">ushort</span></span><br><span class="line">&#123;</span><br><span class="line">    None = <span class="number">0</span>,</span><br><span class="line">    Unknown = <span class="number">1</span>,</span><br><span class="line">    ConnectionLost = <span class="number">100</span>,</span><br><span class="line">    OutlierReading = <span class="number">200</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>总之差不多。</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p><code>struct</code>，当<code>C++</code>用即可，后面学一下<code>readonly</code></p>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">(<span class="built_in">double</span>, <span class="built_in">int</span>) t1 = (<span class="number">4.5</span>, <span class="number">3</span>);</span><br><span class="line">Console.WriteLine(<span class="string">$&quot;Tuple with elements <span class="subst">&#123;t1.Item1&#125;</span> and <span class="subst">&#123;t1.Item2&#125;</span>.&quot;</span>);</span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line"><span class="comment">// Tuple with elements 4.5 and 3.</span></span><br><span class="line"></span><br><span class="line">(<span class="built_in">double</span> Sum, <span class="built_in">int</span> Count) t2 = (<span class="number">4.5</span>, <span class="number">3</span>);</span><br><span class="line">Console.WriteLine(<span class="string">$&quot;Sum of <span class="subst">&#123;t2.Count&#125;</span> elements is <span class="subst">&#123;t2.Sum&#125;</span>.&quot;</span>);</span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line"><span class="comment">// Sum of 3 elements is 4.5.</span></span><br></pre></td></tr></table></figure>
+<p>元组长度可以任意。可以用<code>var</code>定义。</p>
+<h3 id="可空类型"><a href="#可空类型" class="headerlink" title="可空类型"></a>可空类型</h3><p>让值类型也可以<code>null</code>。做游戏时最爱用的一集（读入null中）。用法是在类型后面加一个<code>?</code>。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">double</span>? pi = <span class="number">3.14</span>;</span><br><span class="line"><span class="built_in">char</span>? letter = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> m2 = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">int</span>? m = m2;</span><br><span class="line"></span><br><span class="line"><span class="built_in">bool</span>? flag = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// An array of a nullable value type:</span></span><br><span class="line"><span class="built_in">int</span>?[] arr = <span class="keyword">new</span> <span class="built_in">int</span>?[<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
+<p>不加问号不行<br><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="literal">null</span>; <span class="comment">// 编译器：打咩哟！介是啥呀？</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="内置类型转换"><a href="#内置类型转换" class="headerlink" title="内置类型转换"></a>内置类型转换</h3><ul>
+<li>任何整型数值类型都隐式转换为任何浮点数值类型</li>
+</ul>
+<h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="字符串的常用成员"><a href="#字符串的常用成员" class="headerlink" title="字符串的常用成员"></a>字符串的常用成员</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>类型</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Length</code></td>
+<td>属性</td>
+<td>返回字符串的长度</td>
+</tr>
+<tr>
+<td><code>Concat</code></td>
+<td>静态方法</td>
+<td>返回连接多个参数字符串后的新字符串</td>
+</tr>
+<tr>
+<td><code>Contains</code></td>
+<td>方法</td>
+<td>返回子串是否出现在当前字符串</td>
+</tr>
+<tr>
+<td><code>Format</code></td>
+<td>静态方法</td>
+<td>返回根据格式字符串和参数格式化后的字符串</td>
+</tr>
+<tr>
+<td><code>Insert</code></td>
+<td>方法</td>
+<td>在指定位置插入指定字符串，返回新字符串</td>
+</tr>
+<tr>
+<td><code>Remove</code></td>
+<td>方法</td>
+<td>从当前字符串中移除指定范围的字符，返回新字符串</td>
+</tr>
+<tr>
+<td><code>Replace</code></td>
+<td>方法</td>
+<td>将当前字符串中的所有指定字符或子串替换为另一字符或子串，返回新字符串</td>
+</tr>
+<tr>
+<td><code>Split</code></td>
+<td>方法</td>
+<td>根据指定分隔符将，字符串分割为子字符串数组</td>
+</tr>
+<tr>
+<td><code>Substring</code></td>
+<td>方法</td>
+<td>提取指定起始位置和长度的子字符串</td>
+</tr>
+<tr>
+<td><code>ToLower</code></td>
+<td>方法</td>
+<td>返回小写副本</td>
+</tr>
+<tr>
+<td><code>ToUpper</code></td>
+<td>方法</td>
+<td>返回大写副本</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="字符串解析为数据值"><a href="#字符串解析为数据值" class="headerlink" title="字符串解析为数据值"></a>字符串解析为数据值</h4><p><code>Parse</code>方法。</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> si = <span class="string">&quot;25.873&quot;</span>；</span><br><span class="line"><span class="built_in">double</span> dl = <span class="built_in">double</span>.Parse(sl);</span><br></pre></td></tr></table></figure>
+<p>无法转换会抛出异常。</p>
+<p>防止抛出异常，可以用<code>TryParse</code></p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> s = <span class="string">&quot;28&quot;</span>;</span><br><span class="line"><span class="built_in">int</span> i;</span><br><span class="line"><span class="built_in">bool</span> success = <span class="built_in">int</span>.TryParse(s, <span class="keyword">out</span> i);</span><br></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><code>System.Array</code></p>
+<h4 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h4><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">type[] arrayName;<span class="comment">//数组的声明</span></span><br><span class="line">type?[] arrayName; <span class="comment">// 只有数组的元素可以null</span></span><br><span class="line">type[]? arrayName; <span class="comment">// 只有数组可以null</span></span><br><span class="line">type?[]? arrayName; <span class="comment">// 以上都可以null</span></span><br><span class="line"><span class="comment">//也许问号是右结合的？</span></span><br><span class="line"><span class="built_in">int</span>[] numbers = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">10</span>]; <span class="comment">//默认全都为0</span></span><br><span class="line"><span class="built_in">string</span>[] messages = <span class="keyword">new</span> <span class="built_in">string</span>[<span class="number">10</span>]; <span class="comment">// 默认全都为null</span></span><br></pre></td></tr></table></figure>
+<h4 id="矩形数组与交错数组"><a href="#矩形数组与交错数组" class="headerlink" title="矩形数组与交错数组"></a>矩形数组与交错数组</h4><p>与C/C++不同，C#数组可以长度不一，称为“交错数组”</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 矩形数组</span></span><br><span class="line"><span class="built_in">int</span>[,] rect = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">2</span>, <span class="number">3</span>] &#123; &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;, &#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125; &#125;; <span class="comment">//[,]是“秩说明符”，表示二维矩形数组。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 交错数组</span></span><br><span class="line"><span class="built_in">int</span>[][] jagged = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">3</span>][];</span><br><span class="line">jagged[<span class="number">0</span>] = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>&#125;;</span><br><span class="line">jagged[<span class="number">1</span>] = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">jagged[<span class="number">2</span>] = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123;<span class="number">6</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>与其它语言比较，Python的“交错数组”就是嵌套列表（日常自由），Java本质上都是交错数组</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Java</span></span><br><span class="line"><span class="comment">// “矩形数组”</span></span><br><span class="line"><span class="type">int</span>[][] rect = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>][<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// “交错数组”</span></span><br><span class="line"><span class="type">int</span>[][] jagged = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>][];</span><br><span class="line">jagged[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>&#125;;</span><br><span class="line">jagged[<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">jagged[<span class="number">2</span>] = <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">6</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>数组的读写：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// C#的读写</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; rect.GetLength(<span class="number">0</span>); i++)     <span class="comment">// 行数</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; rect.GetLength(<span class="number">1</span>); j++) <span class="comment">// 列数</span></span><br><span class="line">    &#123;</span><br><span class="line">        rect[i,j]=i*j;</span><br><span class="line">        Console.Write(rect[i, j] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; jagged.Length; i++)          <span class="comment">// 行数</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> j = <span class="number">0</span>; j &lt; jagged[i].Length; j++)   <span class="comment">// 当前行的列数</span></span><br><span class="line">    &#123;</span><br><span class="line">        jagged[i][j]=i*j;</span><br><span class="line">        Console.Write(jagged[i][j] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>矩形数组有点像Python的这个</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Python</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">arr = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</span><br><span class="line">                [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line"><span class="built_in">print</span>(arr[<span class="number">1</span>, <span class="number">2</span>]) <span class="comment"># 6</span></span><br></pre></td></tr></table></figure>
+<p>注意交错数组<strong>不能</strong>在声明语句中初始化<strong>顶层数组之外的数组</strong></p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ❌错的</span></span><br><span class="line"><span class="built_in">int</span>[][][] jagArr = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">3</span>][<span class="number">4</span>][];</span><br><span class="line"></span><br><span class="line"><span class="comment">// ❌错的</span></span><br><span class="line"><span class="built_in">int</span>[][][] jagArr = <span class="keyword">new</span> <span class="built_in">int</span>[][][];</span><br><span class="line"></span><br><span class="line"><span class="comment">// ✔对的</span></span><br><span class="line"><span class="built_in">int</span>[][][] jagArr = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">2</span>][][];</span><br><span class="line"><span class="comment">// ✔对的</span></span><br><span class="line"><span class="built_in">int</span>[][][] jagArr = <span class="keyword">new</span> <span class="built_in">int</span>[][][]</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">new</span> <span class="built_in">int</span>[][] &#123; <span class="keyword">new</span> <span class="built_in">int</span>[]&#123;<span class="number">1</span>&#125; &#125;,</span><br><span class="line">    <span class="keyword">new</span> <span class="built_in">int</span>[][] &#123; <span class="keyword">new</span> <span class="built_in">int</span>[]&#123;<span class="number">2</span>,<span class="number">3</span>&#125; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h4><h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>详见后面“C#的面向对象”</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h3 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h3><p><code>record</code>修饰符<br>（遇到了再学吧。）<br>看这里：<a href="https://www.cnblogs.com/shanfeng1000/p/14973804.html">https://www.cnblogs.com/shanfeng1000/p/14973804.html</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public record Person(string FirstName, string LastName);</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">record</span> <span class="title">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> required <span class="built_in">string</span> FirstName &#123; <span class="keyword">get</span>; <span class="keyword">init</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> required <span class="built_in">string</span> LastName &#123; <span class="keyword">get</span>; <span class="keyword">init</span>; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="void"><a href="#void" class="headerlink" title="void"></a>void</h2><h2 id="非托管类型"><a href="#非托管类型" class="headerlink" title="非托管类型"></a>非托管类型</h2><h2 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h2><h3 id="默认值表"><a href="#默认值表" class="headerlink" title="默认值表"></a>默认值表</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>引用类型</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td>内置整数数值类型</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>内置浮点型数值类型</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><code>&#39;\0&#39;</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>enum</code></td>
+<td><code>0</code> 强制转换成该枚举类型（即使枚举中没有值为 0 的成员）</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>struct</code></td>
+<td>将所有值类型字段设置为其默认值，将所有引用类型字段设置为<code>null</code>，生成的值。</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>可空值类型（<code>T?</code>）</td>
+<td><code>null</code>（即 <code>HasValue = false</code>，没有有效值）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="默认值表达式"><a href="#默认值表达式" class="headerlink" title="默认值表达式"></a>默认值表达式</h3><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="literal">default</span>;</span><br><span class="line"><span class="built_in">int</span> a = <span class="literal">default</span>(<span class="built_in">int</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="foreach"><a href="#foreach" class="headerlink" title="foreach"></a>foreach</h1><p>这是一个经典的<code>foreach</code></p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span>[] myArr = <span class="keyword">new</span> <span class="built_in">int</span>[]&#123;<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">int</span> x <span class="keyword">in</span> myArr) <span class="comment">//int可以改成var，自动推断类型。</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">$&quot;<span class="subst">&#123; x &#125;</span>&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>foreach</code>遍历时，只可读不可写。而且中途不能修改被遍历的可迭代对象（这里是<code>myArr</code>）</p>
+<h2 id="异步foreach"><a href="#异步foreach" class="headerlink" title="异步foreach"></a>异步foreach</h2><h2 id="解构foreach"><a href="#解构foreach" class="headerlink" title="解构foreach"></a>解构foreach</h2><h1 id="C-的面向对象"><a href="#C-的面向对象" class="headerlink" title="C#的面向对象"></a>C#的面向对象</h1><h2 id="类-1"><a href="#类-1" class="headerlink" title="类"></a>类</h2><h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h3><h4 id="6个-类成员的访问修饰符"><a href="#6个-类成员的访问修饰符" class="headerlink" title="6个 类成员的访问修饰符"></a>6个 类成员的访问修饰符</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>含义</th>
+<th>类似 C++</th>
+<th>类似 Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public</code></td>
+<td>都能访问</td>
+<td><code>public</code></td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>仅在同一类/结构体内可访问</td>
+<td><code>private</code></td>
+<td><code>private</code></td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>同一类+派生类可访问</td>
+<td><code>protected</code></td>
+<td><code>protected</code></td>
+</tr>
+<tr>
+<td><code>internal</code></td>
+<td>同一程序集（项目）内可访问</td>
+<td>无直接对应（C++ 用<code>internal</code>链接属性）</td>
+<td><code>default</code>（包级私有）</td>
+</tr>
+<tr>
+<td><code>protected internal</code></td>
+<td>同一程序集​或​派生类（跨程序集也行）</td>
+<td>无直接对应</td>
+<td>无直接对应</td>
+</tr>
+<tr>
+<td><code>private protected</code></td>
+<td>同一程序集内的派生类​可访问（C# 7.2+）</td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="2个-顶级类的访问修饰符"><a href="#2个-顶级类的访问修饰符" class="headerlink" title="2个 顶级类的访问修饰符"></a>2个 顶级类的访问修饰符</h4><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyInternalClass</span> &#123; &#125;  <span class="comment">// 默认 internal，仅同一程序集内可见</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyPublicClass</span> &#123; &#125; <span class="comment">//任何程序集都能引用</span></span><br></pre></td></tr></table></figure>
+<p>顶级类下的嵌套类可以用6个类成员的访问修饰符</p>
+<h2 id="接口-1"><a href="#接口-1" class="headerlink" title="接口"></a>接口</h2><h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>try-catch</p>
+<h1 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h1><h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>微软你个入机。。。<br><img src="robotMS.png" alt="入机翻译"></p>
+<p>不过我写的也很入机就是了。</p>
+<p>一个编程语言都没有深入学。</p>
+<p>想横向学习各个编程语言的编译原理（都，编译了吗？）</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
 </search>

@@ -1256,7 +1256,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #cbffff;
+  background: #36e214;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -1588,7 +1588,6 @@ pre code {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
 }
 .links-of-blogroll-item {
   max-width: calc(100% - 20px);

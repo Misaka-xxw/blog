@@ -301,6 +301,350 @@ mjx-container[display="true"] + br {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://www.misaka-xxw.github.io/2025/10/13/process-thread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Misaka-xxw">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Misaka-xxw的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Misaka-xxw的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2025/10/13/process-thread/" class="post-title-link" itemprop="url">进程与线程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-10-13 20:58:30" itemprop="dateCreated datePublished" datetime="2025-10-13T20:58:30+08:00">2025-10-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-03-04 19:27:34" itemprop="dateModified" datetime="2026-03-04T19:27:34+08:00">2026-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><em>遥远的笔记</em><br><em>也没有写完</em><br><em>备份一下吧</em><br><em>以后还得复习呢</em></p>
+<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h2><p>进程的几个定义</p>
+<ul>
+<li>一个正在执行的程序</li>
+<li>一个正在计算机上执行的程序实例</li>
+<li>能分配给处理器并由处理器执行的实体</li>
+<li>由一组执行的指令、一个当前状态和一组相关的系统结构表征的活动单元</li>
+<li>系统进行<strong>资源分配</strong>的基本单位</li>
+<li>操作系统的基础</li>
+<li>线程的容器</li>
+</ul>
+<p>进程的两个基本元素</p>
+<ul>
+<li><strong>程序代码</strong>（prognam code）：可能被执行相同程序的其他进程共享</li>
+<li>与代码相关的<strong>数据集</strong>（set of data）：当处理器开始执行一个程序，我们把这个执行实体称为一个<strong>进程</strong></li>
+</ul>
+<p>进程元素</p>
+<ul>
+<li>标识符</li>
+<li>状态</li>
+<li>优先级</li>
+<li>程序计数器</li>
+<li>内存指针</li>
+<li>上下文数据</li>
+<li>I/O状态信息</li>
+<li>记账信息（审计信息）</li>
+</ul>
+<p>以上列表信息存在一个称为<strong>进程控制块</strong>（process control block，PCB）的数据结构中。</p>
+<h2 id="进程与程序"><a href="#进程与程序" class="headerlink" title="进程与程序"></a>进程与程序</h2><h3 id="进程与程序之间的关系"><a href="#进程与程序之间的关系" class="headerlink" title="进程与程序之间的关系"></a>进程与程序之间的关系</h3><ul>
+<li>进程是运行的程序在操作系统中的抽象。<ul>
+<li>程序=文件(静态可执行文件)</li>
+<li>进程=运行程序=<strong>程序</strong>+<strong>运行状态</strong>  </li>
+</ul>
+</li>
+<li>一个被多次执行的程序可能对应于多个进程。  </li>
+<li>进程执行需要比程序更多的资源<ul>
+<li>存储指令和数据的<strong>存储器</strong>。</li>
+<li>执行指令的<strong>CPU</strong></li>
+<li>以及其他资源<h3 id="进程和程序之间的区别"><a href="#进程和程序之间的区别" class="headerlink" title="进程和程序之间的区别"></a>进程和程序之间的区别</h3><table>
+<tr>
+  <td></td>
+  <th>进程</th>    
+  <th>程序</th>    
+</tr>
+<tr>
+  <td rowspan="2">主动性</td>
+  <td>主动</td>    
+  <td>被动</td>    
+</tr>
+<tr>
+  <td>一组有序的代码</td>    
+  <td>正在执行的程序</td>    
+</tr>
+<tr>
+  <td>时间</td>
+  <td>短期，动态，不断变化并很快结束的过程</td>    
+  <td>长期，静态，可长时间保存</td>    
+</tr>
+<tr>
+  <td rowspan="2">成分</td>
+  <td colspan="2">进程=程序+数据+PCB</td>    
+</tr>
+<tr>
+  <td colspan="2">一个程序可对应多个进程；通过调用，一个进程可包括多个程序</td>
+</tr>
+</table>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h2><h3 id="进程轨迹和分派器-调度器"><a href="#进程轨迹和分派器-调度器" class="headerlink" title="进程轨迹和分派器(调度器)"></a>进程轨迹和分派器(调度器)</h3><p><strong>轨迹</strong></p>
+<ul>
+<li>列出为进程而执行的指令序列，可描述单个进程的行为</li>
+<li>给出各个进程轨迹的交替方，就可描述处理器的行为</li>
+</ul>
+<p><strong>分派器/调度器</strong></p>
+<ul>
+<li>使处理器切换进程，调度程序</li>
+</ul>
+<h3 id="两状态进程模型"><a href="#两状态进程模型" class="headerlink" title="两状态进程模型"></a>两状态进程模型</h3><p>进程的两种状态</p>
+<ul>
+<li>运行态</li>
+<li>未运行态</li>
+</ul>
+<p><img src="2-states.png" alt="两状态"><br><img src="2-states-queue.png" alt="队列图"></p>
+<h3 id="五状态进程模型"><a href="#五状态进程模型" class="headerlink" title="五状态进程模型"></a>五状态进程模型</h3><p><img src="5-states.png" alt="五状态"></p>
+<ul>
+<li>就绪态：进程已在内存中并可以执行</li>
+<li>阻塞态：进程已在内存中并等待一个事件</li>
+<li>阻塞/挂起态：进程已在外存中并等待一个事件</li>
+<li>就绪/挂起态：进程已在外存中，但只要载入内存就可执行</li>
+</ul>
+<h3 id="被挂起的进程"><a href="#被挂起的进程" class="headerlink" title="被挂起的进程"></a>被挂起的进程</h3><details>
+在我们使用ctrl+z强制进程挂起时，是怎么让操作系统认为该进程需要挂起的？
+为什么再次执行该程序会有xxx busy的报错？
+进程挂起后恢复，之前的数据如何恢复
+进程在挂起状态是否仍在执行，为何进程在挂起状态仍然会占用总线
+</details>
+
+<h4 id="挂起进程的特征"><a href="#挂起进程的特征" class="headerlink" title="挂起进程的特征"></a>挂起进程的特征</h4><ul>
+<li>不能立即被执行</li>
+<li>为阻止进程执行，可以通过代理把这个进程置于挂起态<ul>
+<li>代理可以是进程本身，也可以是父进程或操作系统。</li>
+</ul>
+</li>
+<li>进程可能在或者不在等待事件</li>
+<li>除非代理显式地命令系统进行状态转换，否则进程无法从这一状态中转移。</li>
+</ul>
+<h4 id="进程挂起的原因"><a href="#进程挂起的原因" class="headerlink" title="进程挂起的原因"></a>进程挂起的原因</h4><p>p81</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>交换</td>
+<td></td>
+</tr>
+<tr>
+<td>其他OS原因</td>
+<td></td>
+</tr>
+<tr>
+<td>交互式用户请求</td>
+<td></td>
+</tr>
+<tr>
+<td>定时</td>
+<td></td>
+</tr>
+<tr>
+<td>父进程请求</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 id="交换"><a href="#交换" class="headerlink" title="交换"></a>交换</h5><ul>
+<li>涉及将整个进程的一部分从主内存移动到磁盘</li>
+<li>当主内存中没有一个进程处于就绪状态时，操作系统会将其中一个被阻塞的进程交换到磁盘上的挂起队列中</li>
+</ul>
+<h2 id="进程描述"><a href="#进程描述" class="headerlink" title="进程描述"></a>进程描述</h2><h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><p><strong>原语</strong></p>
+<ul>
+<li>定义：进程控制用的程序段</li>
+<li>特点：执行期间不允许中断，是一个不可分割的</li>
+</ul>
+<h3 id="进程创建"><a href="#进程创建" class="headerlink" title="进程创建"></a>进程创建</h3><h4 id="父进程与子进程"><a href="#父进程与子进程" class="headerlink" title="父进程与子进程"></a>父进程与子进程</h4><p>允许一个进程创建另一个进程<br><strong>父进程</strong>：创建者<br><strong>子进程</strong>：被创建的进程</p>
+<ul>
+<li>子进程可以继承父进程所拥有的资源</li>
+<li>子进程被撤销时，应将其从父进程那里获得的资源还给父进程</li>
+<li>撤销父进程时，同时撤销所有的子进程</li>
+</ul>
+<h4 id="导致创建进程的操作"><a href="#导致创建进程的操作" class="headerlink" title="导致创建进程的操作"></a>导致创建进程的操作</h4><ul>
+<li>终端用户登录系统</li>
+<li>作业调度</li>
+<li>系统提供服务</li>
+<li>用户程序的应用请求</li>
+</ul>
+<h4 id="创建原语"><a href="#创建原语" class="headerlink" title="创建原语"></a>创建原语</h4><ol>
+<li>为新进程分配一个唯一的进程标识号，并申请一个空白的PCB（PCB有限）。若PCB申请失败，则创建失败</li>
+<li>为进程分配其运行所需的资源（内存、文件、I/O设备、CPU时间等），从操作系统或者父进程获得。<br> 若资源不足，处于<strong>创建态</strong>，等待内存资源</li>
+<li>初始化PCB</li>
+<li>若进程就绪队列能够接纳新进程，则将新进程插入就绪队列，等待被调度运行</li>
+</ol>
+<h3 id="进程终止"><a href="#进程终止" class="headerlink" title="进程终止"></a>进程终止</h3><ul>
+<li>一个进程必须有一种方法来表明它的完成</li>
+<li>批处理作业中应该包含一个Halt 指令或一个操作系统显式服务调用用于终止</li>
+<li>对交互式应用程序，用户的行为将指出何时进程完成，(例如，退出登录, 退出应用程序)</li>
+<li>当进程终止的时候，操作系统要回收这个进程占用的内存。</li>
+</ul>
+<h4 id="导致终止进程的操作"><a href="#导致终止进程的操作" class="headerlink" title="导致终止进程的操作"></a>导致终止进程的操作</h4><ul>
+<li>正常结束</li>
+<li>异常结束：存储区越界、保护错、非法指令、特权指令错、运行超时、算数运算错、I/O故障等</li>
+<li>外界干预：操作员或操作系统干预、父进程请求和父进程终止</li>
+</ul>
+<h4 id="终止原语"><a href="#终止原语" class="headerlink" title="终止原语"></a>终止原语</h4><ol>
+<li>根据被终止进程的标识符，检索出该进程的PCB，从中读出该进程的状态</li>
+<li>若被终止进程处于运行状态，立即终止该进程的执行，将CPU资源分配给其他进程</li>
+<li>若该进程还有子孙进程，则<strong>通常</strong>需将其所有子孙进程终止</li>
+<li>将该进程所拥有的全部资源，或归还给其父进程，或归还给操作系统</li>
+<li>将该PCB从所在队列（链表）中删除</li>
+</ol>
+<h4 id="进程派生"><a href="#进程派生" class="headerlink" title="进程派生"></a>进程派生</h4><h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><p><strong>进程与线程的对比</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>进程</th>
+<th>线程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目的</td>
+<td>多道程序并发执行，提高资源利用率和系统吞吐量</td>
+<td>减小程序在并发执行时所符出的时空开销，提高操作系统的并发性能</td>
+</tr>
+<tr>
+<td>单位</td>
+<td>拥有资源和独立调度的基本单位</td>
+<td>不拥有系统资源访问隶属进程的系统资源，独立调度的基本单位，实际运作单位</td>
+</tr>
+<tr>
+<td>开销</td>
+<td>分配回收PCB及其他资源，开销大</td>
+<td>保存设置少量寄存器的内容，开销小</td>
+</tr>
+<tr>
+<td>并发性</td>
+<td>不同进程并发、一个进程的多个线程并发</td>
+<td>不同进程的线程并发</td>
+</tr>
+<tr>
+<td>独立性</td>
+<td>地址空间和资源独立而不准其它进程访问（除了共享全局变量）</td>
+<td>共享进程的地址空间和资源</td>
+</tr>
+<tr>
+<td>多处理器</td>
+<td>单线程进程只能运行在1个CPU上</td>
+<td>多线程进程可以运行在多个CPU上</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="并发：互斥和同步"><a href="#并发：互斥和同步" class="headerlink" title="并发：互斥和同步"></a>并发：互斥和同步</h1><h2 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h2><h3 id="整型信号量"><a href="#整型信号量" class="headerlink" title="整型信号量"></a>整型信号量</h3><ol>
+<li><strong>公有信号量</strong>：实现进程的互斥，初始为1或者资源的数目</li>
+<li><strong>私有信号量</strong>：实现进程间的同步，初值为0或者某个正整数</li>
+</ol>
+<p><strong>信号量S的物理意义</strong></p>
+<ul>
+<li><code>S&gt;=0</code>:对应资源的可用数</li>
+<li><code>S&lt;0</code>:绝对值表示阻塞队列中等待该资源的进程数</li>
+</ul>
+<h3 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h3><p><strong>P操作</strong>：申请一个资源</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Precedure P(<span class="keyword">Var</span> S:Semphore);</span><br><span class="line"><span class="keyword">Begin</span></span><br><span class="line">    S:=S-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">If</span> S&lt;<span class="number">0</span> <span class="keyword">then</span> W(S) <span class="comment">&#123;执行P操作的进程插入等待队列&#125;</span></span><br><span class="line"><span class="keyword">End</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>V操作</strong>：释放一个资源</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Precedure V(<span class="keyword">Var</span> S:Semphore);</span><br><span class="line"><span class="keyword">Begin</span></span><br><span class="line">    S:=S+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">If</span> S&lt;=<span class="number">0</span> <span class="keyword">then</span> R(S) <span class="comment">&#123;从阻塞队列中唤醒一个进程&#125;</span></span><br><span class="line"><span class="keyword">End</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="PV操作实现进程的互斥"><a href="#PV操作实现进程的互斥" class="headerlink" title="PV操作实现进程的互斥"></a>PV操作实现进程的互斥</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">P</span>(mutex)</span><br><span class="line">临界区</span><br><span class="line"><span class="built_in">V</span>(mutex)</span><br></pre></td></tr></table></figure>
+<h3 id="PV操作实现进程的同步"><a href="#PV操作实现进程的同步" class="headerlink" title="PV操作实现进程的同步"></a>PV操作实现进程的同步</h3><p>协调进程之间相互制约的关系</p>
+<h1 id="实战经验"><a href="#实战经验" class="headerlink" title="实战经验"></a>实战经验</h1><h2 id="Unix-C"><a href="#Unix-C" class="headerlink" title="Unix-C"></a>Unix-C</h2><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h2 id="Unity"><a href="#Unity" class="headerlink" title="Unity"></a>Unity</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://www.misaka-xxw.github.io/2025/10/11/git-merge/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1918,215 +2262,6 @@ mjx-container[display="true"] + br {
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://www.misaka-xxw.github.io/2025/05/11/favorite-softwares/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Misaka-xxw">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Misaka-xxw的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Misaka-xxw的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2025/05/11/favorite-softwares/" class="post-title-link" itemprop="url">My实用软件推荐单</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-05-11 15:25:14" itemprop="dateCreated datePublished" datetime="2025-05-11T15:25:14+08:00">2025-05-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-29 16:45:28" itemprop="dateModified" datetime="2026-07-29T16:45:28+08:00">2026-07-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>268</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="普通软件"><a href="#普通软件" class="headerlink" title="普通软件"></a>普通软件</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>软件名</th>
-<th>功能</th>
-<th>官网</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Snipaste</td>
-<td>截图和剪贴板置顶</td>
-<td><a target="_blank" rel="noopener" href="https://zh.snipaste.com/download.html">https://zh.snipaste.com/download.html</a></td>
-</tr>
-<tr>
-<td>Color</td>
-<td>屏幕取色板</td>
-<td><a target="_blank" rel="noopener" href="https://www.den4b.com/news/3044/colors-3-2">https://www.den4b.com/news/3044/colors-3-2</a></td>
-</tr>
-<tr>
-<td>ScreenToGif</td>
-<td>Gif录屏、编辑和转换，很全面</td>
-<td><a target="_blank" rel="noopener" href="https://www.screentogif.com/downloads">https://www.screentogif.com/downloads</a></td>
-</tr>
-<tr>
-<td>Ultimate Vocal Remover</td>
-<td>强大的人声分离和去除混音软件</td>
-<td><a target="_blank" rel="noopener" href="https://ultimatevocalremover.com/">https://ultimatevocalremover.com/</a></td>
-</tr>
-<tr>
-<td>OpenUtau</td>
-<td>开源歌声合成，古法调教或鬼畜</td>
-<td><a target="_blank" rel="noopener" href="https://www.openutau.com/#download">https://www.openutau.com/#download</a></td>
-</tr>
-<tr>
-<td>Joplin</td>
-<td>多设备Markdown格式记事本</td>
-<td><a target="_blank" rel="noopener" href="https://joplinapp.org/download/">https://joplinapp.org/download/</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="专业软件"><a href="#专业软件" class="headerlink" title="专业软件"></a>专业软件</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>软件名</th>
-<th>功能</th>
-<th>官网</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>filezilla</td>
-<td>ftp</td>
-<td><a target="_blank" rel="noopener" href="https://www.filezilla.cn/">https://www.filezilla.cn/</a></td>
-</tr>
-<tr>
-<td>MobaXterm</td>
-<td>ssh</td>
-<td><a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/">https://mobaxterm.mobatek.net/</a></td>
-</tr>
-<tr>
-<td>IDA</td>
-<td>反汇编</td>
-<td><a target="_blank" rel="noopener" href="https://hex-rays.com/ida-free">https://hex-rays.com/ida-free</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="宝藏网站"><a href="#宝藏网站" class="headerlink" title="宝藏网站"></a>宝藏网站</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>网站名</th>
-<th>功能</th>
-<th>官网</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>魔法人型师</td>
-<td>3D小人凹造型，人体废起稿用</td>
-<td><a target="_blank" rel="noopener" href="https://webapp.magicposer.com/">https://webapp.magicposer.com/</a></td>
-</tr>
-<tr>
-<td>印章生成器</td>
-<td>做出像考古出来的印章图案</td>
-<td><a target="_blank" rel="noopener" href="http://www.nicetool.net/Tool.php?Id=943">http://www.nicetool.net/Tool.php?Id=943</a></td>
-</tr>
-<tr>
-<td>毛笔字生成器</td>
-<td>做出像考古出来的毛笔书法图</td>
-<td><a target="_blank" rel="noopener" href="https://www.akuziti.com/mb/">https://www.akuziti.com/mb/</a></td>
-</tr>
-<tr>
-<td>stylekit</td>
-<td>精选优质 Web 设计风格，提供文档、组件模板、代码片段， 以及可直接导出的 AI Rules。</td>
-<td><a target="_blank" rel="noopener" href="https://www.stylekit.top/zh/styles">https://www.stylekit.top/zh/styles</a></td>
-</tr>
-<tr>
-<td>配色灵感</td>
-<td>自动识别图片主要颜色，进行AI分析</td>
-<td><a target="_blank" rel="noopener" href="https://www.color5.com/upload/">https://www.color5.com/upload/</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>怎么全是画画的？</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/blog/list/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/list/">1</a><a class="page-number" href="/blog/list/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/list/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/blog/list/page/6/">6</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/blog/list/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -2151,14 +2286,14 @@ mjx-container[display="true"] + br {
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">97k</span>
+    <span title="站点总字数">98k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:54</span>
+    <span title="站点阅读时长">5:56</span>
   </span>
 </div>
 <div class="busuanzi-count">

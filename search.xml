@@ -4,7 +4,57 @@
   
     
     <entry>
-      <title>数在计算机</title>
+      <title>半自动生成Live2D面捕虚拟形象，并成为“虚拟主播”</title>
+      <link href="/blog/2026/11/02/live2d-auto/"/>
+      <url>/blog/2026/11/02/live2d-auto/</url>
+      
+        <content type="html"><![CDATA[<p>前言：2024年做小九的游戏时，实在太想拿奖了，愣是速学了live2D。无奈缺乏技术与艺术的双重积淀，这样的模型只能用来做丝滑小动画，不能用于当Vtuber。</p><p>本文介绍一种低成本（宽松点儿就是零成本）的方案，让不会Live2D建模的人、甚至不会画画的人，只需要有电脑就可以实现成为拥有自己<strong>虚拟形象</strong>的虚拟主播。</p><p>项目地址：<a href="https://github.com/lTwTlol/Auto_Vtb_beta">https://github.com/lTwTlol/Auto_Vtb_beta</a></p><p>预言一下以后会有人把自动生成Live2D流程做成skill，哈哈。</p><h1 id="生成立绘"><a href="#生成立绘" class="headerlink" title="生成立绘"></a>生成立绘</h1><p>这里用的免费豆包。拿出2023年画的oc设定图，生成了一个立绘，还行。我这里属于是图生图（原图自己画的）。我的提示词：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用日漫美少女画风，画这个动漫小人，Apose，耳朵等细节元素不要删除。背景需要为空，这样我后面可以拆解成live2D模型</span><br></pre></td></tr></table></figure><p>这个提示词并不算很好，缺乏细节。不过我会给自己下提示词，不用担心。如果AI玩的好，你完全可以把这篇博客标题中的“半自动”演绎成“自动”。</p><p>设计提示词的要点：</p><ol><li>正面图，A-Pose（防止奇奇怪怪的角度）</li><li>要求嘴巴和眼睛都张开</li><li>二次元画风指定（2.5次元画风或者三次元画风，恐怕会有欢乐谷效应吧）</li></ol><h1 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h1><p>作者在<a href="https://github.com/lTwTlol/Auto_Vtb_beta/blob/main/docs/zh/PSD_LAYER_SPEC.md">PSD分层说明文档里</a>里清晰地写到分层和命名方法，需要按照表格里面命名，线稿、光效也需要和底色合并在一起。最后导出<code>psd</code>后缀的分层文件。</p><p>这里，我花了大量精力研究如何安装ComfyUI节点和使用Seethrough，无奈电脑显存不足，即使用了作者介绍的“最后手段”，还是爆显存。所以能工智人发力了，用画世界和PhotoShop进行了手工分层。</p><p>理论上可以用ChatGPT拆解部件，改天试试再写。</p><h2 id="Seethrough分层的ComfyUI安装"><a href="#Seethrough分层的ComfyUI安装" class="headerlink" title="Seethrough分层的ComfyUI安装"></a>Seethrough分层的ComfyUI安装</h2><p>电脑有一个好的显卡，并且显存在12GB以上再这么玩儿。至于这里我和AI一直在释放组合技，才组装好的ComfyUI节点和模型，结果最后电脑显卡力气小，只好放弃了这一方案。</p><h2 id="修图-绘画软件手工分层的技巧"><a href="#修图-绘画软件手工分层的技巧" class="headerlink" title="修图/绘画软件手工分层的技巧"></a>修图/绘画软件手工分层的技巧</h2><p>首先需要研读一下<a href="https://github.com/lTwTlol/Auto_Vtb_beta/blob/main/docs/zh/PSD_LAYER_SPEC.md">PSD分层说明文档</a>。（点击链接，读）</p><p>像我这样的懒人，是这样手动分层的：</p><ol><li>开对称，描一边圆圆的头</li><li>描头发：前发（刘海），呆毛，后发（后发和辫子），侧发，并涂一下前后发衔接的一块儿，到时候合并到头的图层里。</li><li>眼睛嘴巴：开对称，描一边。注意睫毛要和眼珠分开，睫毛不要描下眼线，嘴巴要张开。牙齿和舌头可以单做一图层（到时候会蒙版）。眼睛部件左右不用特意分开，软件会自动分。</li><li>切身体：一气呵成，剪切成上身（不包括胳膊）、裙子、两手臂、两腿、鞋子。其中短裙剪切完往上拉伸一下（或者说液化），这样垫在上衣底下衔接腰不会断（<code>芙兰)(达</code>），腿同理，分别向上向下液化一下。</li><li>其它装饰品：切出来或者描出来。</li></ol><p>毕竟玩儿呢，要是真要细节，必须得找人类画师、拆分师和建模师哦。</p><p>我使用画世界进行基础分层（有笔比较顺手），用PhotoShop进行重命名和图层合并（有键盘顺手），看个人习惯。</p><h1 id="Auto-Vtb生成模型"><a href="#Auto-Vtb生成模型" class="headerlink" title="Auto Vtb生成模型"></a>Auto Vtb生成模型</h1><p>从<a href="https://github.com/lTwTlol/Auto_Vtb_beta/releases">下载页面</a>下载最新版的<code>zip</code>，解压，点击<code>Auto_Vtb.exe</code>开箱即用。导入分层好的psd，稍等几秒。</p><p>很简单，参数都是字面意思上的，稍微调两下数值就可以。</p><p><img src="自动生成步骤.webp" alt="自动生成步骤.webp"></p><p>例如可以改变嘴部形状 <code>（^ω^）</code></p><p><img src="可爱嘴型.webp" alt="（^ω^）"></p><h1 id="Vtube-Studio动作捕捉软件设置"><a href="#Vtube-Studio动作捕捉软件设置" class="headerlink" title="Vtube Studio动作捕捉软件设置"></a>Vtube Studio动作捕捉软件设置</h1><p>这个软件是免费的，从steam上面下载。<br>只提一下关键步骤，首先先看一下左边栏的功能，这三个按钮等一下用<br><img src="左边边栏.webp" alt="左边边栏.webp"></p><h2 id="导入模型"><a href="#导入模型" class="headerlink" title="导入模型"></a>导入模型</h2><p>点击左边栏的“选择模型”圆按钮，接下来导入模型。<br><img src="导入模型.webp" alt="导入模型.webp"><br><img src="打开模型文件夹.webp" alt="打开模型文件夹.webp"></p><p>把生成模型的文件夹都放到这个指定的文件夹里。</p><h2 id="换纯色背景"><a href="#换纯色背景" class="headerlink" title="换纯色背景"></a>换纯色背景</h2><p>点击左边栏的“背景图片”圆按钮，接下来改成绿幕或者别的颜色的背景（哔哩哔哩直播姬疑似不支持透明串流）。<br>点击ColorPicker<br><img src="colorpicker.webp" alt="colorpicker.webp"><br><img src="设置背景色.webp" alt="设置背景色.webp"></p><h2 id="面部捕捉和虚拟摄像头"><a href="#面部捕捉和虚拟摄像头" class="headerlink" title="面部捕捉和虚拟摄像头"></a>面部捕捉和虚拟摄像头</h2><p>打开面捕，正襟危坐并矫正。<br><img src="面部捕捉矫正.webp" alt="面部捕捉矫正.webp"></p><p><strong>找到虚拟摄像头并激活</strong><br><img src="虚拟摄像头激活.webp" alt="虚拟摄像头激活.webp"></p><h1 id="Bilibili直播姬设置"><a href="#Bilibili直播姬设置" class="headerlink" title="Bilibili直播姬设置"></a>Bilibili直播姬设置</h1><p>以B站直播为例。</p><p>下载bilibili直播姬，添加素材。<br><img src="素材.webp" alt="素材.webp"></p><p>Vtube Studio不要关。翻到下面，左下角有一个虚拟摄像机<br><img src="添加虚拟摄像机.webp" alt="添加虚拟摄像机.webp"></p><p>点击省略号后，点击编辑<br><img src="编辑obs.webp" alt="编辑obs.webp"></p><p>摄像头下拉框选择VTubeStudioCam<br><img src="选择obs摄像机.webp" alt="选择obs摄像机.webp"></p><p>开启背景扣除，颜色选择刚刚你在Vtube Studio里选择的颜色，调整一下参数即可。</p><p><img src="扣除背景.webp" alt="扣除背景.webp"></p><p>然后你就可以加别的素材，上下拖动调整展示顺序就好啦！</p><p>下面那个飞来飞去的紫发小人儿是Vtube Studio的水印吉祥物，要付费删除。如果你不想展示出来，就在Vtube Studio和哔哩哔哩直播姬里调一下位置大小。</p><p>碎碎念：都6202年了，我竟然还纯手动敲博客，实在是传统手艺。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂项 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Live2D </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于知识图谱生成的一次实践</title>
+      <link href="/blog/2026/10/21/kg-graph-practice/"/>
+      <url>/blog/2026/10/21/kg-graph-practice/</url>
+      
+        <content type="html"><![CDATA[<p>（废话时间）春去秋来，AI如同雨后春笋。我认为的AI是一个参数很多的函数，人类就是一个参数更多的函数。所以，我想我就是一个预训练过的AI模型，让脑子很聪明的AI，蒸馏出一个不太聪明的我。</p><p>而我的毕设也跟知识图谱有关，虽然现在的AI幻觉不大了，但是现在的我有幻觉。因此，我需要AI在教我的同时，拿出权威的知识节点作为根据。</p><p>等制作到一定程度再写吧。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机中的数</title>
       <link href="/blog/2026/09/01/data-in-computer/"/>
       <url>/blog/2026/09/01/data-in-computer/</url>
       
